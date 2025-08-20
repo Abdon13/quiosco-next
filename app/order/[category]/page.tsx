@@ -13,8 +13,7 @@ async function getProducts(category: string){
   return products
 }
 
-export default async function OrderPage(props: Promise<{ params: { category: string } }>) {
-  const { params } = await props;
+export default async function OrderPage({ params }: { params: { category: string } })  {
   const products = await getProducts(params.category)
   return (
     <>
